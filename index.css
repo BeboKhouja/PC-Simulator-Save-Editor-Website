@@ -7,4 +7,45 @@
 }
 * {
     font-family: 'open_sansregular';
+    margin-top: 10px;
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.2);
 }
+
+body {
+    background-image: url("Thumbnail.jpg");
+}
+
+button {
+    background-color: #272effc3;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+div {
+    border: solid 3px;
+    padding: 1em;
+    border-radius: 25px;
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.4);
+  }
+
+.container {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.4);
+  }
+
+  .item {
+    backdrop-filter: blur(10px);
+    box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.4);
+    width: 10em;
+  }
