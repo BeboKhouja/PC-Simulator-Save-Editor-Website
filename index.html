@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <title>PC Simulator Save Editor Website</title>
         <script src="index.js" type="text/javascript"></script>
         <meta property="og:title" content="PC Simulator Save Editor Web" />
         <meta property="og:type" content="website" />
         <meta property="og:description" content="Free and open-source PC Simulator save editor." />
+        <meta name="viewport" content="width=device-width, initial-scale=1.01">
         <link rel="stylesheet" type="text/css" href="index.css" />
         <!-- Chrome, Edge, Firefox -->
         <link rel="icon" href="PC Simulator Save Editor.svg">
@@ -16,13 +17,16 @@
     <body>
         <div clas="container">
             <div class="item">
-                <textarea id="textarea"></textarea><br>
+                <textarea id="textarea" rows="6"></textarea><br>
                 <button id="decrypt/encrypt">Decrypt/Encrypt</button>
                 <button id="copy">Copy to Clipboard</button>
             </div>
             <div class="item">
                 <input type="file" id="file-input">
+                <input type="file" id="file-decrypttotxt">
+                <button id="open">Open file</button>
                 <button id="save">Save</button>
+                <button id="decrypttotxt">Decrypt/Encrypt to TXT</button>
             </div>
             <div class="item">
                 <a href="https://github.com/BeboKhouja/PC-Simulator-Save-Editor/releases/tag/v1.3.0">Download Java JAR</a><br>

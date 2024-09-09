@@ -15,6 +15,14 @@ body {
     background-image: url("Thumbnail.jpg");
 }
 
+#file-input {
+  display: none;
+}
+
+#file-decrypttotxt {
+  display: none;
+}
+
 button {
     background-color: #272effc3;
     color: white;
