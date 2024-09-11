@@ -1,0 +1,10 @@
+{
+    "short_name": "PC Simulator Save Editor",
+    "name": "PC Simulator Save Editor",
+    "icons": [
+        {
+            "src": "/help-icon.svg",
+            "type": "image/svg+xml"
+        }
+    ]
+}
