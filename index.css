@@ -1,3 +1,22 @@
+/*
+PC Simulator Save Editor is a free and open source save editor for PC Simulator.
+    Copyright (C) 2024  Mokka Chocolata
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+Email: mokkachocolata@gmail.com
+*/
+
 @font-face {
     font-family: 'open_sansregular';
     src: url('opensans-variablefont_wdthwght-webfont.woff2') format('woff2'),
@@ -65,7 +84,7 @@ div {
   }
 
 textarea {
-  width: 83vw;
+  width: 99.5%;
 }
 .container {
     height: max-content;
@@ -78,5 +97,5 @@ textarea {
   .item {
     backdrop-filter: blur(10px);
     box-shadow: 1px 4px 1px rgba(0, 0, 0, 0.4);
-    width: 85vw;
+    width: 95%;
   }
