@@ -17,6 +17,19 @@ PC Simulator Save Editor is a free and open source save editor for PC Simulator.
 Email: mokkachocolata@gmail.com
 */
 
+#goToTop {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  width: 70px;
+  height: 70px;
+  border-radius: 10px; /* Rounded corners */
+}
+
 @font-face {
     font-family: 'open_sansregular';
     src: url('opensans-variablefont_wdthwght-webfont.woff2') format('woff2'),
@@ -74,6 +87,10 @@ button {
     font-size: 16px;
     cursor: pointer;
     border-radius: 4px;
+}
+
+button:hover {
+  background-color: #272effaa;
 }
 div {
     border: solid 3px;

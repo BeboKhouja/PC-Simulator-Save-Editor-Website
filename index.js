@@ -21,6 +21,24 @@ Email: mokkachocolata@gmail.com
 window.onload=function() {
     var textarea = document.getElementById("textarea");
     var clicked = false;
+    window.onscroll = function() {scrollFunction()};
+
+    let gototopButton = document.getElementById("goToTop");
+    function scrollFunction() {
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            gototopButton.style.display = "block";
+        } else {
+            gototopButton.style.display = "none";
+        }
+    }
+
+    function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }
+
+    gototopButton.addEventListener("click", topFunction, false)
+
     function copyToClipboard() {
         navigator.clipboard.writeText(textarea.value);
     }
