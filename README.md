@@ -1,6 +1,6 @@
 # PC Simulator Save Editor Website
 
-The website for PC Simulator.
+The website for PC Simulator Save Editor.
 
 # Links
 If you are on Android, install this app for better performance (supports all architectures supported by Android): https://github.com/BeboKhouja/PCSimulatorSaveEditorAndroidPort/releases/download/v1.4.3/app-release.apk<br>
