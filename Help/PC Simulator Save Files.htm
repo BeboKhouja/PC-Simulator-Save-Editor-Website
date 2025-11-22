@@ -1,5 +1,5 @@
 <!-- PC Simulator Save Editor is a free and open source save editor for PC Simulator.
-    Copyright (C) 2024  Mokka Chocolata
+    Copyright (C) 2025  Mokka Chocolata
 
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -18,8 +18,8 @@ Email: mokkachocolata@gmail.com -->
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <HTML lang="en">
 <HEAD>
-<meta name="GENERATOR" content="Microsoft&reg HTML Help Workshop 4.1">
-<Title>PC Simulator Save Files</Title>
+    <meta name="GENERATOR" content="Microsoft&reg HTML Help Workshop 4.1">
+    <Title>PC Simulator Save Files</Title>
 </HEAD>
 <BODY>
 
@@ -31,8 +31,7 @@ In this tutorial, we'll refer PC Simulator Save files as just saves.<br><br>
 <h2>First line of a save</h2><br>
 The first line of a save contains metadata about the save.<br><br>
 <code>
-{"version":"1.8.0","roomName":"1.8.0","coin":180,"room":3,"gravity":true,"hardcore":false,"playtime":5525.873046875,"temperature":20.0,"ac":false,"light":true,"sign":"Yiming"}
-
+    {"version":"1.8.0","roomName":"1.8.0","coin":180,"room":3,"gravity":true,"hardcore":false,"playtime":5525.873046875,"temperature":20.0,"ac":false,"light":true,"sign":"Yiming"}
 </code><br>
 <b>This is how the first line of the 1.8.0 example look's like.</b><br><br>
 The <code>version</code> property describes the version the save has been played as of the latest load. This property cannot be changed after the save has been created without loading the save in a newer version.<br>
@@ -61,7 +60,7 @@ It's getting more complicated now, so try to stay with me if you're interested.<
     The <code>ry, rx</code> properties relate to the rotation of the player camera.<br><br>
 </p>
 
-Now, global applies to all, and specifics applies to a specific <code>spawnId</code>. <br><br> 
+Now, global applies to all, and specifics applies to a specific <code>spawnId</code>. <br><br>
 
 <p>
     <b>This is how an object's global property look's like:</b><br>
@@ -169,7 +168,7 @@ Simply modify the coin value as explained at the start of the page to anything a
 
 <p>
 <h2>Change the AC temperature to below the minimum or above the max</h2><br>
-Again, very easy. Just change the temperature to whatever you want. (min <code>-2,147,483,647</code> and max <code>2,147,483,647</code>)<br>
+Again, very easy. Just change the temperature to whatever you want. (min <code>-Infinity</code> and max <code>Infinity</code>)<br>
 Very useful to get to the top of the leaderboard.
 </p>
 

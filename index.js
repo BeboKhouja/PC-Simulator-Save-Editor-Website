@@ -74,11 +74,10 @@ window.onload=function() {
     }
     // Decrypt provided string
     function decryptStr(str) {
-        var key = 0x81;
+        const key = 0x81;
         var out = "";
-        for (let i = 0; i < str.length; i++) {
+        for (let i = 0; i < str.length; i++)
             out += String.fromCharCode(str.charCodeAt(i) ^ key);
-        }
         return out;
     }
     // Just basically a shortcut to the decryptStr function
@@ -88,8 +87,45 @@ window.onload=function() {
     function down() {
         download("Save.pc", decryptStr(textarea.value));
     }
+    const lineDelimiter = /\r?\n/;
+    function checkSaveValidJson() {
+        const lines = textarea.value.split(lineDelimiter);
+        if (lines.length != 2) return false;
+        try {
+            JSON.parse(lines[0]);
+            const sec = JSON.parse(lines[1]);
+            if (typeof(sec.playerData) != "object" || typeof(sec.itemData) != "object") return false;
+            if (typeof(sec.playerData.x) != "number" || typeof(sec.playerData.y) != "number" || typeof(sec.playerData.z) != "number") return false;
+        } catch {
+            return false;
+        }
+        return true;
+    }
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    function getJsonLines() {
+        if (!checkSaveValidJson()) throw Error("Invalid JSON data");
+        const lines = textarea.value.split(lineDelimiter);
+        return [JSON.parse(lines[0]), JSON.parse(lines[1])];
+    }
+    function getPlayerPos() {
+        if (!checkSaveValidJson()) throw Error("Invalid JSON data");
+        const playerData = getJsonLines()[1].playerData;
+        return {"x": playerData.x, "y": playerData.y, "z": playerData.z};
+    }
+    function insertSpawnId(spawnId, data) {
+        if (!checkSaveValidJson()) return;
+        var orig = getJsonLines();
+        if (data == null) data = {};
+        orig[1].itemData.push({"spawnId": spawnId, "id": getRandomIntInclusive(-2147483648, 2147483647), "pos": getPlayerPos(), "rot": {"x": 0, "y": 0, "z": 0, "w": 0}, "data": data});
+        const newJson = orig.map(e => JSON.stringify(e));
+        textarea.value = `${newJson[0]}\n${newJson[1]}`;
+    }
     var open = document.getElementById("file-input");
-    open.addEventListener("click", readSingleFile, false);
+    open.addEventListener("change", readSingleFile, false);
     var openDecrypt = document.getElementById("file-decrypttotxt");
     // Decrypts the opened file, then saves it as a decrypted file
     function decryptToTxt(e) {
@@ -104,9 +140,15 @@ window.onload=function() {
         };
         reader.readAsText(file);
     }
-    openDecrypt.addEventListener("click", decryptToTxt, false);
+    openDecrypt.addEventListener("change", decryptToTxt, false);
     var button = document.getElementById("decrypt/encrypt");
     button.addEventListener("click", decrypt, false);
+    var insertSpawnIdBut = document.getElementById("insertSpawnId");
+    insertSpawnIdBut.addEventListener("click", function() {
+        const str = window.prompt("Insert your Spawn ID here to spawn below the player");
+        if (str == null) return;
+        insertSpawnId(str);
+    }, false);
     var copy = document.getElementById("copy");
     copy.addEventListener("click", copyToClipboard, false);
     var openFile = document.getElementById("open");
